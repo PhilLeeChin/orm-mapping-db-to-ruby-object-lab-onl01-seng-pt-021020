@@ -59,7 +59,7 @@ class Student
 
   def self.all_students_in_grade_X(amount)
     sql = "SELECT * FROM students WHERE students.grade = ?;"
-    DEB[:conn].execute(sql,amount).map do |row|
+    DB[:conn].execute(sql,amount).map do |row|
       self.new_from_db(row)
     end
   end
